@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <!-- pagina 1 -->
+    <div data-role="page" id="one">
+        
+        <!-- cabeçalho 1 -->
+        <div data-role="header" style="overflow:hidden;">
+            <h1>Cadrastrar clientes</h1>
+                <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
+                <div data-role="navbar">
+                <ul>
+                    <li><a href="#one"  data-theme="b" data-iconshadow="true">Cadrastrar</a></li>
+                    <li><a href="#two"  data-theme="b" data-iconshadow="true">Ver clientes</a></li>
+                    <li><a href="#three"  data-theme="b" data-iconshadow="true" >login</a></li>
+                </ul>
+            </div>
+            </div>      
+        <!-- corpo 1 -->
+        <div class="ui-content">            
+            <div class="ui-field-contain">
+                <label for="cep">Cep</label>
+                <input type="text" id="cep" placeholder="Cep" aria-label="Cep"/>
+                <button class="ui-btn ui-shadow ui-corner-all ui-btn-b" id="botao">Pesquisar CEP</button>
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Nome" />
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="documento">Documento</label>
+                <input type="text" id="documento" placeholder="Documento" />
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="celular">Celular</label>
+                <input type="text" id="celular" placeholder="Celular" />
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="logradouro">Endereço</label>
+                <input type="text" id="logradouro" placeholder="Endereço" />
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="numero">Numero</label>
+                <input type="text" id="numero" placeholder="Numero" />
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" placeholder="Bairro" />
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" placeholder="Cidade" />
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" placeholder="Estado" />
+            </div>
+
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-b" onclick="enviar()">Salvar dados</button>
+        </div>
+    </div>
+    
+    <!-- pagina 2 -->
+    <div data-role="page" id="two">
+        
+        <!-- cabeçalho 2 -->
+        <div data-role="header" style="overflow:hidden;">
+            <h1>Ler clientes</h1>
+                <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
+                <div data-role="navbar">
+                <ul>
+                    <li><a href="#one"  data-theme="b" data-iconshadow="true">Cadrastrar</a></li>
+                    <li><a href="#two"  data-theme="b" data-iconshadow="true">Ver clientes</a></li>
+                    <li><a href="#three"  data-theme="b" data-iconshadow="true" >login</a></li>
+                </ul>
+            </div>
+            </div>
+        
+        <!-- corpo 2 -->
+        <div class="ui-content">
+            <button  class="ui-btn ui-shadow ui-corner-all ui-btn-b" data-icon="user" onclick="lerclientes()">Ler Storage</button>
+            <table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Columns to display..." data-column-popup-theme="a">
+
+                
+                  <tr>
+                    <th data-priority="1">Nome</th>
+                    <th data-priority="2">Celular</th>
+                    
+                  </tr>
+                
+                <tbody id="corpotabela"></tbody>
+              </table>
+        </div>
+    </div>
+    
+    <!-- pagina 3 -->
+    <div data-role="page" id="three">
+        
+        <!-- cabeçalho 3 -->
+        <div data-role="header" style="overflow:hidden;">
+            <h1>login</h1>
+                <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
+                <div data-role="navbar">
+                <ul>
+                    <li><a href="#one"  data-theme="b" data-iconshadow="true">Cadrastrar</a></li>
+                    <li><a href="#two"  data-theme="b" data-iconshadow="true">Ver clientes</a></li>
+                    <li><a href="#three"  data-theme="b" data-iconshadow="true" >login</a></li>
+                </ul>
+            </div>
+            </div>
+        <!-- corpo 3 -->
+        <div class="ui-content">
+
+            <form>
+
+                    <label for="nomeuser">Nome</label>
+                    <input type="text" data-theme="b" data-iconshadow="true" placeholder="Ex: miguel francisco" value="">
+                    
+                    <label for="senhauser">senha</label>
+                    <input type="password" data-theme="b" data-iconshadow="true"  value="">
+                    
+                    
+                    <input type="button" data-theme="b"  data-iconshadow="true" value="Cadrastrar">
+                    
+                    </div>
+                </form>
+
+            <div 
+        </div>
+    </div>
+
+    <script src="./js/lerclientes.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/cadastrocliente.js"></script>
+    
+</body>
+</html>
